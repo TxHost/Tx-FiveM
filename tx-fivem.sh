@@ -67,8 +67,7 @@ printf "${CYAN} Démarrage technologie pour démarrer votre serveur fivem !"
     cd /etc/systemd/system
     wget https://raw.githubusercontent.com/TxHost/Tx-Fivem/master/fivem.service
     systemctl enable fivem.service
-    wget https://raw.githubusercontent.com/TxHost/Tx-FiveM/master/tx-start.sh
-    
+    wget https://raw.githubusercontent.com/TxHost/Tx-FiveM/master/tx-start
     cp tx-start.sh /usr/bin/
 fi
 sleep 2
