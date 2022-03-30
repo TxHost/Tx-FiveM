@@ -57,6 +57,33 @@ printf "${CYAN} Démarrage de l'instalaltion de version de 5436 pour serveur Fiv
     # Suppression du cache automatique
     # sed -i '1irm -r cache' run.sh
     rm fx.tar.xz
+    echo -e "${GREEN} l'installation de version de 5436 pour serveur Five M a était effectuer avec succès
+fi
+if [[ "$reponse" == "n" ]] 
+then
+    printf "${YELLOW} Quelle est le lien de la version que vous voullez ❓  ${reset}:"
+    read -s -r VERSION
+
+while true; do
+
+  if [[ "$VERSION" == "" ]]; then
+    echo -e "${red} Le mot de passe doit être obligatoire !"
+    echo -n -e "${GREEN} Quelle est le lien de la version que vous voullez ❓ ❓ ${reset}: "
+    read -s -r VERSION
+        cd /home/
+    mkdir -p fivem
+    cd /home/fivem
+    wget ${VERSION}
+    tar xvfJ fx.tar.xz
+    # Suppression du cache automatique
+    # sed -i '1irm -r cache' run.sh
+    rm fx.tar.xz
+  else
+    echo -e "${GREEN}Le mot de passe est correct !${reset}" 
+    break 
+  fi
+done 
+
 fi
 sleep 2
 
