@@ -98,7 +98,7 @@ printf "${CYAN} Démarrage de l'instalaltion de MariaDB pour serveur FiveM !"
 fi
 sleep 2
 
-echo -n -e "${GREEN}Quel est le nom de votre base de données ❓ ${YELLOW}(tx_base)${reset}: "
+echo -n -e "${RED} Quel est le nom de votre base de données ❓ ${YELLOW}  (tx_base) ${reset}: "
 read -r DBNAME
 
 if [[ "$DBNAME" == "" ]]; then
@@ -106,7 +106,7 @@ if [[ "$DBNAME" == "" ]]; then
 fi
 
 sleep 2
-echo -n -e "${GREEN}Quel est l'utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
+echo -n -e "${RED} Quel est l'utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
 read -r DBUSER
 
 if [[ "$DBUSER" == "" ]]; then
@@ -114,7 +114,7 @@ if [[ "$DBUSER" == "" ]]; then
 fi
 
 sleep 2
-echo -n -e "${GREEN}Quel est le mot de passe de votre base de données ❓ ${reset}: "
+echo -n -e "${RED} Quel est le mot de passe de votre base de données ❓ ${reset}: "
 read -s -r DBPASS
 
 while true; do
