@@ -102,7 +102,7 @@ fi
 sleep 2
 
 
-echo -n -e "${GREEN}Quel est l\'utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
+echo -n -e "${GREEN}Quel est le utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
 read -r DBUSER
 if [[ "$DBUSER" == "" ]]; then
   DBUSER="root"  
