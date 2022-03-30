@@ -98,7 +98,7 @@ printf "${CYAN} Démarrage de l'instalaltion de MariaDB pour serveur FiveM !"
 fi
 sleep 2
 
-echo -n -e "${RED} Quel est le nom de votre base de données ❓ ${YELLOW}  (tx_base) ${reset}: "
+echo -n -e "${RED} Quel est le nom de votre base de données ❓ ${YELLOW}    (tx_base) ${reset}: "
 read -r DBNAME
 
 if [[ "$DBNAME" == "" ]]; then
