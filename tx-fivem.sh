@@ -32,21 +32,21 @@ NC='\033[0m'                                                #no color
          printf "\\n"
          exit 1
  fi
-    printf "${COLOR1}   ©️ Copyright Tous droits réservés TXHOST. \\n"
-    printf "${COLOR2}  💻 Systèmes pris en charge : $supported 💻\\n"
+    printf "${COLOR1}   ©️ Copyright Tous droits réservés TXHOST ©️ \\n"
+    printf "${COLOR2}  💻  Systèmes pris en charge : $supported 💻\\n"
     printf "${NC}\\n"    
     sleep 6
 #############################################################################
 
-echo -e  Prérequis installation Five M !
+echo -e "${YELLOW}  Prérequis installation Five M !
 sleep 1
 apt update && apt upgrade -y && apt install lsb-release apt-transport-https ca-certificates bash xz-utils git curl wget nload htop sudo screen -y 
 
 #Installation de 5104
 echo
-    printf "${YELLOW} Souhaitez-vous instalaltion du serveur Five M avec la version de 5436 ❓  [O/n]\\n"
+    printf "${YELLOW} Souhaitez-vous instalaltion du serveur Five M avec la version de 5436 ❓  [o/N]\\n"
     read reponse
-if [[ "$reponse" == "O" ]]
+if [[ "$reponse" == "o" ]]
 then 
 printf "${CYAN} Démarrage de l'instalaltion de version de 5436 pour serveur Five M !"
     cd /home/
@@ -62,9 +62,9 @@ sleep 2
 
 #Installation de SYSTEMCTL
 echo
-    printf "${YELLOW} Vous souhaitez disposer de commandes system pour démarrer votre serveur fivem ?  ❓  [O/n]\\n"
+    printf "${YELLOW} Vous souhaitez disposer de commandes system pour démarrer votre serveur fivem ?  ❓  [o/N]\\n"
     read reponse
-if [[ "$reponse" == "O" ]]
+if [[ "$reponse" == "o" ]]
 then 
 printf "${CYAN} Démarrage technologie pour démarrer votre serveur fivem !"
     cd /etc/systemd/system
@@ -78,9 +78,9 @@ sleep 2
 
 # Installation MARIADB
 echo
-    printf "${YELLOW} Souhaitez-vous créer une installation automatique de MariaDB   ❓ [O/n]\\n"
+    printf "${YELLOW} Souhaitez-vous créer une installation automatique de MariaDB   ❓ [o/N]\\n"
     read reponse
-if [[ "$reponse" == "O" ]]
+if [[ "$reponse" == "o" ]]
 then 
 printf "${CYAN} Démarrage de l'instalaltion de MariaDB pour serveur FiveM !"
     apt -y install software-properties-common curl apt-transport-https ca-certificates gnupg
@@ -119,7 +119,7 @@ read -s -r DBPASS
 while true; do
 
   if [[ "$DBPASS" == "" ]]; then
-    echo -e "${red}Le mot de passe doit être obligatoire !"
+    echo -e "${red} Le mot de passe doit être obligatoire !"
     echo -n -e "${GREEN}Quel est le mot de passe de votre base de données ❓ ${reset}: "
     read -s -r DBPASS
   else
@@ -131,9 +131,9 @@ done
 
 #Installation PHPMYADMIN
 echo
-    printf "${YELLOW} Souhaitez-vous crée une installation automatique de PHPMYADMIN   ❓ [O/n]\\n"
+    printf "${YELLOW} Souhaitez-vous crée une installation automatique de PHPMYADMIN   ❓ [o/N]\\n"
     read reponse
-if [[ "$reponse" == "O" ]]
+if [[ "$reponse" == "o" ]]
 then 
 printf "${CYAN} Démarrage de l'instalaltion de phpMyAdmin pour serveur Five M !"
     apt install phpmyadmin
@@ -171,9 +171,9 @@ echo -e "Configuration de la utilisateur"
 
   sleep 10
 echo
-    printf "${YELLOW} Souhaitez-vous démarrer votre serveur Five M   ❓ [O/n]\\n"
+    printf "${YELLOW} Souhaitez-vous démarrer votre serveur Five M   ❓ [o/N]\\n"
     read reponse
-if [[ "$reponse" == "O" ]]
+if [[ "$reponse" == "o" ]]
 then 
 printf "${CYAN} Démarrage de votre serveur Five M !"
     sudo iptables -A INPUT -p tcp --dport 40120 -j ACCEPT  
