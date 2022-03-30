@@ -35,20 +35,20 @@ NC='\033[0m'                                                #no color
     printf "${COLOR1}   ©️ Copyright Tous droits réservés TXHOST ©️ \\n"
     printf "${COLOR2}  💻  Systèmes pris en charge : $supported 💻\\n"
     printf "${NC}\\n"    
-    sleep 6
+    sleep 5
 #############################################################################
 
-echo -e "${YELLOW}  Prérequis installation Five M !
+echo -e "${YELLOW} Instalaltion des prérequis pour un serveur Five M !
 sleep 1
 apt update && apt upgrade -y && apt install lsb-release apt-transport-https ca-certificates bash xz-utils git curl wget nload htop sudo screen -y 
 
 #Installation de 5104
 echo
-    printf "${YELLOW} Souhaitez-vous instalaltion du serveur Five M avec la version de 5436 ❓  [o/N]\\n"
-    read reponse
-if [[ "$reponse" == "o" ]]
-then 
+  printf "${YELLOW} De la dernière version de l'artefact pour serveur Five M ❓  [o/N]\\n"
+
+  sleep 2 
 printf "${CYAN} Démarrage de l'instalaltion de version de 5436 pour serveur Five M !"
+    sleep 2
     cd /home/
     mkdir -p fivem
     cd /home/fivem
@@ -58,34 +58,8 @@ printf "${CYAN} Démarrage de l'instalaltion de version de 5436 pour serveur Fiv
     # sed -i '1irm -r cache' run.sh
     rm fx.tar.xz
     echo -e "${GREEN} l'installation de version de 5436 pour serveur Five M a était effectuer avec succès
-fi
-if [[ "$reponse" == "n" ]] 
-then
-    printf "${YELLOW} Quelle est le lien de la version que vous voullez ❓  ${reset}:"
-    read -s -r VERSION
 
-while true; do
-
-  if [[ "$VERSION" == "" ]]; then
-    echo -e "${red} Le mot de passe doit être obligatoire !"
-    echo -n -e "${GREEN} Quelle est le lien de la version que vous voullez ❓ ❓ ${reset}: "
-    read -s -r VERSION
-        cd /home/
-    mkdir -p fivem
-    cd /home/fivem
-    wget ${VERSION}
-    tar xvfJ fx.tar.xz
-    # Suppression du cache automatique
-    # sed -i '1irm -r cache' run.sh
-    rm fx.tar.xz
-  else
-    echo -e "${GREEN}Le mot de passe est correct !${reset}" 
-    break 
-  fi
-done 
-
-fi
-sleep 2
+sleep 3 
 
 #Installation de SYSTEMCTL
 echo
