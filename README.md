@@ -1,16 +1,18 @@
-# Installation automatique pour un serveur fivem avec mysql sur Ubuntu 18.04
+
 
 # Prérequis :
 
-- Un VPS sous Ubuntu 20.04 chez http://txhost.fr. (ou autre)
+- Un VPS sous Ubuntu 20.04 (chez http://txhost.fr ou autre)
 
 
 # Lien de l'installation :
 ```
 bash <(wget -O - 'https://raw.githubusercontent.com/TxHost/Tx-FiveM/master/tx-fivem.sh')
+
 ```
+## Durée de l'installation 
 
-
+La durée d'installation sur un VPS TxHost est de 02m:12s
 
 # Start & Restart & Stop & Status votre serveur avec les commandes system !
 ```
@@ -34,10 +36,10 @@ quit
 ```
 
 
-## Démarage de votre serveur sans la nouvelle technologie !
+## Démarage de votre serveur sans les commandes system !
 
 ```
-tx-start
+    tx-start
 ```
 ou
 
@@ -45,4 +47,5 @@ ou
     cd /home/fivem
     bash /home/fivem/run.sh +exec server.cfg +set txAdminPort 40120
 ```
-Durée de l'installation sur un VPS TxHost : 02m:12s
+
+

@@ -32,9 +32,8 @@ NC='\033[0m'                                                #no color
          printf "\\n"
          exit 1
  fi
-    printf "${COLOR1} Plus besoin du screen avec la version 2.1 de  \\n"
-    printf "${COLOR1}©️  Copyright Tous droits réservés TXHOST.©️ \\n"
-    printf "${COLOR2}💻 Systèmes pris en charge : $supported 💻\\n"
+    printf "${COLOR1}   ©️ Copyright Tous droits réservés TXHOST. \\n"
+    printf "${COLOR2}  💻 Systèmes pris en charge : $supported 💻\\n"
     printf "${NC}\\n"    
     sleep 6
 #############################################################################
