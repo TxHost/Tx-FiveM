@@ -94,7 +94,7 @@ fi
 sleep 2
 
 
-echo -n -e "${GREEN}Quel est le nom de votre base de données ❓ ${YELLOW}(tx_base)${reset}: "
+echo -n -e "${GREEN} Quel est le nom de votre base de données ❓ ${YELLOW}(tx_base)${reset}: "
 read -r DBNAME
 if [[ "$DBNAME" == "" ]]; then
   DBNAME="tx_base"  
@@ -102,13 +102,13 @@ fi
 sleep 2
 
 
-echo -n -e "${GREEN}Quel est le utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
+echo -n -e "${GREEN} Quel est le utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
 read -r DBUSER
 if [[ "$DBUSER" == "" ]]; then
   DBUSER="root"  
 fi
 sleep 2
-echo -n -e "${GREEN}Quel est le mot de passe de votre base de données ❓ ${reset}: "
+echo -n -e "${GREEN} Quel est le mot de passe de votre base de données ❓ ${reset}: "
 read -s -r DBPASS
 while true; do
   if [[ "$DBPASS" == "" ]]; then
