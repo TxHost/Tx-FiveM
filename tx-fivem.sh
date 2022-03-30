@@ -37,29 +37,25 @@ NC='\033[0m'                                                #no color
     printf "${NC}\\n"    
     sleep 5
 #############################################################################
-
-echo -e "${YELLOW} Instalaltion des prérequis pour un serveur Five M !
+#Installation prérequis
+echo -e "${YELLOW} Instalaltion des prérequis pour un serveur Five M ! \\n
 sleep 1
 apt update && apt upgrade -y && apt install lsb-release apt-transport-https ca-certificates bash xz-utils git curl wget nload htop sudo screen -y 
+sleep 2
 
-#Installation de 5104
-echo
-  printf "${YELLOW} De la dernière version de l'artefact pour serveur Five M ❓  [o/N]\\n"
+#Installation de 5436
 
-  sleep 2 
-printf "${CYAN} Démarrage de l'instalaltion de version de 5436 pour serveur Five M !"
-    sleep 2
-    cd /home/
-    mkdir -p fivem
-    cd /home/fivem
-    wget  https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/5436-1984c3e2a7b968f2772a90920b56473b9995f5e3/fx.tar.xz
-    tar xvfJ fx.tar.xz
-    # Suppression du cache automatique
-    # sed -i '1irm -r cache' run.sh
-    rm fx.tar.xz
-    echo -e "${GREEN} l'installation de version de 5436 pour serveur Five M a était effectuer avec succès
-
-sleep 3 
+echo -e "${YELLOW} Instalaltion de la dernière version de l'artefact pour serveur Five M  \\n"
+sleep 1
+echo -e  "${CYAN} Démarrage de l'instalaltion de version de 5436 pour serveur Five M !"
+  cd /home/
+  mkdir -p fivem
+  cd /home/fivem
+  wget  https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/5436-1984c3e2a7b968f2772a90920b56473b9995f5e3/fx.tar.xz
+  tar xvfJ fx.tar.xz
+  sed -i '1irm -r cache' run.sh
+  rm fx.tar.xz
+sleep 2
 
 #Installation de SYSTEMCTL
 echo
