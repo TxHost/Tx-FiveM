@@ -41,12 +41,10 @@ NC='\033[0m'                                                #no color
 echo -e  Prérequis installation Five M !
 sleep 1
 apt update && apt upgrade -y && apt install lsb-release apt-transport-https ca-certificates bash xz-utils git curl wget nload htop sudo screen -y 
-    printf "${COLOR1}✔️ Instalation réussi \\n"
-
 
 #Installation de 5104
 echo
-    printf "${YELLOW} LAST NEW Artifacts : Souhaitez-vous instalaltion du serveur Five M avec la version de 5436 ❓  [O/n]\\n"
+    printf "${YELLOW} Souhaitez-vous instalaltion du serveur Five M avec la version de 5436 ❓  [O/n]\\n"
     read reponse
 if [[ "$reponse" == "O" ]]
 then 
@@ -59,8 +57,6 @@ printf "${CYAN} Démarrage de l'instalaltion de version de 5436 pour serveur Fiv
     # Suppression du cache automatique
     # sed -i '1irm -r cache' run.sh
     rm fx.tar.xz
-printf "${COLOR1}✔️ Instalation réussi \\n"
-
 fi
 sleep 2
 
@@ -77,7 +73,6 @@ printf "${CYAN} Démarrage technologie pour démarrer votre serveur fivem !"
     wget https://raw.githubusercontent.com/TxHost/Tx-FiveM/master/tx-start.sh
     
     cp tx-start.sh /usr/bin/
-    printf "${COLOR1}✔️ Instalation réussi \\n"
 fi
 sleep 2
 
@@ -99,8 +94,6 @@ printf "${CYAN} Démarrage de l'instalaltion de MariaDB pour serveur FiveM !"
     sudo apt -y install php7.4
     apt install -y php7.4-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} mariadb-client mariadb-server apache2 tar unzip git 
     php -v
-  printf "${COLOR1}✔️ Instalation réussi \\n"
-
 fi
 sleep 2
 
@@ -146,8 +139,6 @@ printf "${CYAN} Démarrage de l'instalaltion de phpMyAdmin pour serveur Five M !
     apt install phpmyadmin
     sudo service apache2 restart
     ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
-    printf "${COLOR1}✔️ Instalation réussi \\n"
-
 fi
 
 echo -e "Configuration de la utilisateur"
@@ -157,20 +148,19 @@ echo -e "Configuration de la utilisateur"
   mysql -e "CREATE DATABASE ${DBNAME};"
   mysql -p -e "GRANT ALL PRIVILEGES ON * . * TO '${DBUSER}'@'localhost';"
   mysql -e "FLUSH PRIVILEGES;"
-    printf "${COLOR1}✔️ Configuration réussi \\n"
 
 
   sleep 3
-    printf "${COLOR3}✔️ L'installation est terminée ! \\n"
+    printf "${COLOR1}✔️ L'installation est terminée ! \\n"
     printf "${COLOR3}❤️ Site de TxHost: https://txhost.fr/ \\n"
     printf "${COLOR3}❤️ Discord de TxHost: https://discord.txhost.fr/ \\n"
     printf "${COLOR3}❤️ Github de TxHost: https://github.com/TxHost/ \\n"
     echo -en '\n'
     sleep 3
     printf "${COLOR1}✔️ Récapitulatif du MySQL \\n"
-    printf "${COLOR1}🌐 Lien du phpMyAdmin : http://$(hostname -I)/phpmyadmin/ \\n"
-    printf "${COLOR1}👤 Nom d'utilisateur de la base de données MySQL: ${DBUSER}\\n"
-    printf "${COLOR1}👤 Mot de passe de connexion base de données MySQL: ${DBPASS} \\n"
+    printf "${COLOR4}🌐 Lien du phpMyAdmin : http://$(hostname -I)/phpmyadmin/ \\n"
+    printf "${COLOR4}👤 Nom d'utilisateur de la base de données MySQL: ${DBUSER}\\n"
+    printf "${COLOR4}👤 Mot de passe de connexion base de données MySQL: ${DBPASS} \\n"
     echo -en '\n'
     sleep 3
     printf "${COLOR2}✔️ Récapitulatif sur créaction de votre seveur ! \\n"
