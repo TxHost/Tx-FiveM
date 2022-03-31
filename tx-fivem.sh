@@ -59,7 +59,7 @@ sleep 2
 
 #Installation de SYSTEMCTL
 echo
-    printf "${YELLOW} Vous souhaitez disposer de commandes system pour démarrer votre serveur fivem ?  ❓  [o/N]\\n"
+    printf "${YELLOW} Vous souhaitez disposer de commandes system pour démarrer votre serveur fivem ❓  [o/N]\\n"
     read reponse
 if [[ "$reponse" == "o" ]]
 then 
@@ -70,13 +70,14 @@ printf "${CYAN} Démarrage technologie pour démarrer votre serveur fivem !"
     sleep 2
     cd /usr/bin/
     wget https://raw.githubusercontent.com/TxHost/Tx-FiveM/master/tx-start.sh
+    chmod +x tx-start
     cd
 fi
 sleep 2
 
 # Installation MARIADB
 echo
-    printf "${YELLOW} Souhaitez-vous créer une installation automatique de MariaDB   ❓ [o/N]\\n"
+    printf "${YELLOW} Souhaitez-vous créer une installation automatique de MariaDB ❓ [o/N]\\n"
     read reponse
 if [[ "$reponse" == "o" ]]
 then 
@@ -126,17 +127,17 @@ done
 
 #Installation PHPMYADMIN
 echo
-    printf "${YELLOW} Souhaitez-vous crée une installation automatique de PHPMYADMIN   ❓ [o/N]\\n"
+    printf "${YELLOW} Souhaitez-vous crée une installation automatique de PHPMYADMIN ❓ [o/N]\\n"
     read reponse
 if [[ "$reponse" == "o" ]]
 then 
-printf "${CYAN} Démarrage de l'instalaltion de phpMyAdmin pour serveur Five M !"
-    apt install phpmyadmin
+printf "${CYAN} Démarrage de l'instalaltion de PHPMYADMIN !"
+    apt install phpmyadmin -y
     sudo service apache2 restart
     ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
 fi
 
-echo -e "Configuration de la utilisateur"
+echo -e "${YELLOW} Configuration de la utilisateur"
   echo "Mettre le mot de passe root de MySQL"
   sleep 2
   mysql -e "CREATE USER '${DBUSER}'@'localhost' IDENTIFIED BY '${DBPASS}';"
@@ -151,13 +152,13 @@ echo -e "Configuration de la utilisateur"
     printf "${COLOR3}❤️ Discord de TxHost: https://discord.txhost.fr/ \\n"
     printf "${COLOR3}❤️ Github de TxHost: https://github.com/TxHost/ \\n"
     echo -en '\n'
-    sleep 3
+    sleep 1
     printf "${COLOR1}✔️ Récapitulatif du MySQL \\n"
     printf "${COLOR4}🌐 Lien du phpMyAdmin : http://$(hostname -I)/phpmyadmin/ \\n"
     printf "${COLOR4}👤 Nom d'utilisateur de la base de données MySQL: ${DBUSER}\\n"
     printf "${COLOR4}👤 Mot de passe de connexion base de données MySQL: ${DBPASS} \\n"
     echo -en '\n'
-    sleep 3
+    sleep 1
     printf "${COLOR2}✔️ Récapitulatif sur créaction de votre seveur ! \\n"
     printf "${COLOR2}🌐 Lien du TxAdmin : http://$(hostname -I):40120/ \\n"
     printf "${COLOR2}💻 Chemin du dossier  : /home/fivem \\n"
