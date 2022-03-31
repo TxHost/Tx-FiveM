@@ -174,5 +174,3 @@ printf "${CYAN} Démarrage de votre serveur Five M !"
     sudo netfilter-persistent reload
     cd /home/fivem
     bash /home/fivem/run.sh +exec server.cfg +set txAdminPort 40120
-fi
-
