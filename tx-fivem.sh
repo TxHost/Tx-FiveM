@@ -151,13 +151,13 @@ echo -e "${YELLOW} Configuration de la utilisateur"
     printf "${COLOR3}❤️ Site de TxHost: https://txhost.fr/ \\n"
     printf "${COLOR3}❤️ Discord de TxHost: https://discord.txhost.fr/ \\n"
     printf "${COLOR3}❤️ Github de TxHost: https://github.com/TxHost/ \\n"
-    echo -en '\n'
+    printf "${NC}\\n" 
     sleep 1
     printf "${COLOR1}✔️ Récapitulatif du MySQL \\n"
     printf "${COLOR4}🌐 Lien du phpMyAdmin : http://$(hostname -I)/phpmyadmin/ \\n"
     printf "${COLOR4}👤 Nom d'utilisateur de la base de données MySQL: ${DBUSER}\\n"
     printf "${COLOR4}👤 Mot de passe de connexion base de données MySQL: ${DBPASS} \\n"
-    echo -en '\n'
+    printf "${NC}\\n" 
     sleep 1
     printf "${COLOR2}✔️ Récapitulatif sur créaction de votre seveur ! \\n"
     printf "${COLOR2}🌐 Lien du TxAdmin : http://$(hostname -I):40120/ \\n"
