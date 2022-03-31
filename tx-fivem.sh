@@ -105,7 +105,7 @@ fi
 sleep 2
 
 
-echo -n -e "${GREEN} Quel est le utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
+echo -n -e "${GREEN} Quel est l'utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
 read -r DBUSER
 if [[ "$DBUSER" == "" ]]; then
   DBUSER="root"  
@@ -147,6 +147,7 @@ echo -e "${YELLOW} Configuration de la utilisateur"
 
 
   sleep 3
+
     printf "${COLOR1}✔️ L'installation est terminée ! \\n"
     printf "${COLOR3}❤️ Site de TxHost: https://txhost.fr/ \\n"
     printf "${COLOR3}❤️ Discord de TxHost: https://discord.txhost.fr/ \\n"
