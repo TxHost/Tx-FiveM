@@ -33,12 +33,12 @@ NC='\033[0m'                                                #no color
          exit 1
  fi
     printf "${COLOR1}   ©️ Copyright Tous droits réservés TXHOST ©️ \\n"
-    printf "${COLOR2}  💻  Systèmes pris en charge : $supported 💻\\n"
+    printf "${COLOR2}  💻 Systèmes pris en charge : $supported 💻\\n"
     printf "${NC}\\n"    
     sleep 5
 #############################################################################
 #Installation prérequis
-echo -e "${YELLOW} Instalaltion des prérequis pour un serveur Five M ! \\n
+echo -e "${YELLOW} Instalaltion des prérequis pour un serveur Five M ! \\n"
 sleep 1
 apt update && apt upgrade -y && apt install lsb-release apt-transport-https ca-certificates bash xz-utils git curl wget nload htop sudo screen -y 
 sleep 2
@@ -67,8 +67,10 @@ printf "${CYAN} Démarrage technologie pour démarrer votre serveur fivem !"
     cd /etc/systemd/system
     wget https://raw.githubusercontent.com/TxHost/Tx-Fivem/master/fivem.service
     systemctl enable fivem.service
-    wget https://raw.githubusercontent.com/TxHost/Tx-FiveM/master/tx-start
-    cp tx-start.sh /usr/bin/
+    sleep 2
+    cd /usr/bin/
+    wget https://raw.githubusercontent.com/TxHost/Tx-FiveM/master/tx-start.sh
+    cd
 fi
 sleep 2
 
@@ -175,3 +177,18 @@ printf "${CYAN} Démarrage de votre serveur Five M !"
     cd /home/fivem
     bash /home/fivem/run.sh +exec server.cfg +set txAdminPort 40120
 fi
+
+
+cat << "EOF"
+       _____    _   _           _   
+      |_   _|  | | | |         | |  
+        | |_  _| |_| | ___  ___| |_ 
+        | \ \/ /  _  |/ _ \/ __| __|
+        | |>  <| | | | (_) \__ \ |_ 
+        \_/_/\_\_| |_/\___/|___/\__|
+
+     Discord : https://discord.txhost.fr
+          Site : https://txhost.fr
+            
+            TxHost © 2021 - 2022                          
+EOF
