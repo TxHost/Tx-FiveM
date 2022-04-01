@@ -40,7 +40,17 @@ NC='\033[0m'                                                #no color
 #Installation prérequis
 echo -e "${YELLOW} Instalaltion des prérequis pour un serveur Five M ! \\n"
 sleep 1
-apt update && apt upgrade -y && apt install lsb-release apt-transport-https ca-certificates bash xz-utils git curl wget nload htop sudo screen -y 
+    apt update
+    apt upgrade -y
+    apt install bash curl wget nload htop sudo neofetch -y
+    wget https://raw.githubusercontent.com/TxHost/assets/main/vps/.bashrc
+    source .bashrc
+    rm /etc/motd
+    cd /etc/
+    wget https://raw.githubusercontent.com/TxHost/assets/main/vps/motd
+
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config;systemctl restart ssh
+ apt install lsb-release apt-transport-https ca-certificates bash xz-utils git screen -y 
 sleep 2
 
 #Installation de 5436
