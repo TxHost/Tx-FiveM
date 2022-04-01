@@ -105,31 +105,23 @@ fi
 sleep 2
 
 
-echo -n -e "${GREEN} Quel est l'utilisateur de votre base de données ❓ ${YELLOW}(root)${reset}: "
+echo -n -e "${GREEN} Quel est l'utilisateur de votre base de données ❓ ${YELLOW}(txhost)${reset}: "
 read -r DBUSER
 if [[ "$DBUSER" == "" ]]; then
-  DBUSER="root"  
+  DBUSER="txhost"  
 fi
 sleep 2
-echo -n -e "${GREEN} Quel est le mot de passe de votre base de données ❓ ${reset}: "
+echo -n -e "${GREEN} Quel est le mot de passe de votre base de données ❓ ${YELLOW}(txhost) ${reset}: "
 read -s -r DBPASS
-while true; do
-  if [[ "$DBPASS" == "" ]]; then
-    echo -e "${red} Le mot de passe doit être obligatoire !"
-    echo -n -e "${GREEN}Quel est le mot de passe de votre base de données ❓ ${reset}: "
-    read -s -r DBPASS
-  else
-    echo -e "${GREEN}Le mot de passe est correct !${reset}" 
-    break 
-  fi
-done 
-
+if [[ "$DBPASS" == "" ]]; then
+  DBUSER="txhost"  
+fi
 
 #Installation PHPMYADMIN
 echo
     printf "${YELLOW} Souhaitez-vous crée une installation automatique de PHPMYADMIN ❓ [o/N]\\n"
     read reponse
-if [[ "$reponse" == "o" ]]
+if [[ "$reponse" == "o" ]]  
 then 
 printf "${CYAN} Démarrage de l'instalaltion de PHPMYADMIN !"
     apt install phpmyadmin -y
@@ -177,7 +169,8 @@ printf "${CYAN} Démarrage de votre serveur Five M !"
     sudo netfilter-persistent save
     sudo netfilter-persistent reload
     cd /home/fivem
-    bash /home/fivem/run.sh +exec server.cfg +set txAdminPort 40120
+    wget https://raw.githubusercontent.com/TxHost/assets/main/fivem/server.cfg
+    bash /home/fivem/run.sh
 fi
 
 
